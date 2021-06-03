@@ -16,7 +16,7 @@ app.set('view engine', 'twig');
 app.use(express.static('public'))
 
 // Définir le port dans une variable
-const port = 4400;
+const port = 5000;
 
 // Routing
 app.get('/', (req, res) => {
@@ -24,11 +24,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/blog', (req,res) => {
-    res.send('Mes articles');
+    res.render('blog')
 })
 
 app.get('/blog/:id', (req,res) => {
-    res.send(req.params.id)
+    res.render('article')
 })
 
 app.get('/services', (req,res) => {
